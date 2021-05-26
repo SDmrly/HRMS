@@ -1,22 +1,27 @@
 package kodlamaio.HRMS.entities.concretes;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
 @Table(name = "user_account")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserAccount {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
@@ -30,7 +35,7 @@ public class UserAccount {
 	private String nationalityId;
 	
 	@Column(name = "date_of_birth")
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	@Column(name = "email")
 	private String email;
@@ -40,19 +45,5 @@ public class UserAccount {
 	
 	@Column(name = "verification")
 	private boolean verification;
-	
-	public UserAccount(int id, String fistName, String lastName, String nationalityId, Date dateOfBirth, String email,
-			String password, boolean verification) {
-		super();
-		this.id = id;
-		this.fistName = fistName;
-		this.lastName = lastName;
-		this.nationalityId = nationalityId;
-		this.dateOfBirth = dateOfBirth;
-		this.email = email;
-		this.password = password;
-		this.verification = verification;
-	}
-	
-	
+
 }
