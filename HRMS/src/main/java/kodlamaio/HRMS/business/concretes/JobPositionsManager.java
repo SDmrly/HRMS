@@ -12,7 +12,7 @@ import kodlamaio.HRMS.core.utilities.results.Result;
 import kodlamaio.HRMS.core.utilities.results.SuccesDataResult;
 import kodlamaio.HRMS.core.utilities.results.SuccessResult;
 import kodlamaio.HRMS.dataAccess.abstracts.JobPositionDao;
-import kodlamaio.HRMS.entities.concretes.JobPositions;
+import kodlamaio.HRMS.entities.concretes.JobPosition;
 
 @Service
 public class JobPositionsManager implements JobPositionsService{
@@ -26,13 +26,13 @@ public class JobPositionsManager implements JobPositionsService{
 	}
 
 	@Override
-	public DataResult<List<JobPositions>> getAll() {
-		return new SuccesDataResult<List<JobPositions>>(this.jobPositionDao.findAll()
+	public DataResult<List<JobPosition>> getAll() {
+		return new SuccesDataResult<List<JobPosition>>(this.jobPositionDao.findAll()
 				, "Pozisyonlar Listelendi.");
 	}
 
 	@Override
-	public Result add(JobPositions jobPositions) {
+	public Result add(JobPosition jobPositions) {
 		if(this.jobPositionDao.existsByPositionName(jobPositions.getPositionName())) {
 			return new ErrorResult("Pozisyon Mevcut");
 		}
