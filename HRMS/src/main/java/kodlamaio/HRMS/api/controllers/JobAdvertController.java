@@ -48,7 +48,7 @@ public class JobAdvertController {
 		return this.jobAdvertService.getJobAdvertByEmployerAccount(employerId);
 	}
 	
-	@GetMapping("/updateIsActiveted")
+	@GetMapping("/updateDeactiveted")
 	@Transactional
 	public Result updateJobAdvertSetIsActivetedForJobId(@RequestParam("jobId") int jobId) {
 		return this.jobAdvertService.updateJobAdvertSetIsActivetedForJobId(jobId);
