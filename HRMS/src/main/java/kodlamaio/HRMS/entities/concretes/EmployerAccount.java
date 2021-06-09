@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -30,18 +32,28 @@ public class EmployerAccount {
 	private int employerId;
 	
 	@Column(name = "company_name")
+	@NotBlank
+	@NotNull
 	private String companyName;
 	
 	@Column(name = "website")
+	@NotBlank
+	@NotNull
 	private String website;
 	
 	@Column(name = "email")
+	@NotBlank
+	@NotNull
 	private String email;
 	
 	@Column(name = "telephone")
+	@NotBlank
+	@NotNull
 	private String telephone;
 	
 	@Column(name = "password")
+	@NotBlank
+	@NotNull
 	private String password;
 	
 	@Column(name = "verification")

@@ -34,11 +34,6 @@ public class UserManager implements UserService{
 
 	@Override
 	public Result add(UserAccount userAccount) {
-		if(userAccount.getFistName().isEmpty() || userAccount.getLastName().isEmpty() || userAccount.getNationalityId().isEmpty()
-				|| String.valueOf(userAccount.getDateOfBirth()).isEmpty() || userAccount.getEmail().isEmpty()
-				|| userAccount.getPassword().isEmpty()) {
-			return new ErrorResult("Lütfen bütün alanları doldurun!");
-		}
 		
 		if(this.userDao.existsByEmailOrNationalityId(userAccount.getEmail(), userAccount.getNationalityId())) {
 			return new ErrorResult("TC no ve ya email kullanımda.");

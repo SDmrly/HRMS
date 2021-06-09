@@ -33,11 +33,6 @@ public class EmployerManager implements EmployerService{
 
 	@Override
 	public Result add(EmployerAccount employerAccount) {
-		if(employerAccount.getCompanyName().isEmpty() || employerAccount.getWebsite().isEmpty()
-				|| employerAccount.getEmail().isEmpty() || employerAccount.getTelephone().isEmpty()
-				|| employerAccount.getPassword().isEmpty()) {
-			return new ErrorResult("Lütfen bütün alanları doldurun.");
-		}
 		
 		if(this.employerDao.existsByEmail(employerAccount.getEmail())) {
 			return new ErrorResult("Mail adresi kullanımda.");
