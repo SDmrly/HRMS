@@ -36,7 +36,7 @@ public class UserAccount {
 	@Column(name = "first_name")
 	@NotBlank
 	@NotNull
-	private String fistName;
+	private String firstName;
 	
 	@Column(name = "last_name")
 	@NotBlank

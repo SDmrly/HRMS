@@ -16,7 +16,7 @@ public class MernisManager implements MernisService{
 		KPSPublicSoapProxy client=new KPSPublicSoapProxy();
 		boolean result = false;
 		try {
-			result = client.TCKimlikNoDogrula(Long.valueOf(userAccount.getNationalityId()), userAccount.getFistName().toUpperCase(), userAccount.getLastName().toUpperCase(), userAccount.getDateOfBirth().getYear());
+			result = client.TCKimlikNoDogrula(Long.valueOf(userAccount.getNationalityId()), userAccount.getFirstName().toUpperCase(), userAccount.getLastName().toUpperCase(), userAccount.getDateOfBirth().getYear());
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

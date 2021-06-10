@@ -43,7 +43,7 @@ public class CvJobExperience {
 	private LocalDate jobQuitDate;
 	
 	@JsonIgnore
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name = "cv_id")
 	private UserCv userCv;
 

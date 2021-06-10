@@ -9,14 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserCvJobExperienceSortedDateDto {
+public class UserCvEducationSortedDateDto {
 	private int cvId;
 	private String firstName;
 	private String lastName;
-	private String workplaceName;
-	private String jobPositionName;
-	private LocalDate jobStartedDate;
-	private LocalDate jobQuitDate;
+	private String schoolName;
+	private String schoolSectionName;
+	private LocalDate startedDate;
+	private LocalDate dateOfGraduation;
 	
-
 }

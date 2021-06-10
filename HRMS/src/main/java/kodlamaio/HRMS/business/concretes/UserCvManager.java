@@ -13,6 +13,8 @@ import kodlamaio.HRMS.core.utilities.results.DataResult;
 import kodlamaio.HRMS.core.utilities.results.Result;
 import kodlamaio.HRMS.core.utilities.results.SuccesDataResult;
 import kodlamaio.HRMS.core.utilities.results.SuccessResult;
+import kodlamaio.HRMS.entities.dtos.CvAllDto;
+import kodlamaio.HRMS.entities.dtos.UserCvEducationSortedDateDto;
 import kodlamaio.HRMS.entities.dtos.UserCvJobExperienceSortedDateDto;
 
 @Service
@@ -32,12 +34,17 @@ public class UserCvManager  implements UserCvService{
 	}
 
 	@Override
-	public DataResult<List<UserCv>> getAll() {
-		return new SuccesDataResult<List<UserCv>>(this.userCvDao.findAll(), "Cv Listelendi.");
+	public DataResult<List<UserCvJobExperienceSortedDateDto>> getUserAccountWithUserCvWithCvJobExperienceSortedDate() {
+		return new SuccesDataResult<List<UserCvJobExperienceSortedDateDto>>(this.userCvDao.getUserAccountWithUserCvWithCvJobExperienceSortedDate(), "Data Listelendi.");
 	}
 
 	@Override
-	public DataResult<List<UserCvJobExperienceSortedDateDto>> getUserAccountWithUserCvWithCvJobExperienceSortedDate() {
-		return new SuccesDataResult<List<UserCvJobExperienceSortedDateDto>>(this.userCvDao.getUserAccountWithUserCvWithCvJobExperienceSortedDate(), "Data Listelendi.");
+	public DataResult<List<UserCvEducationSortedDateDto>> getUserAccountWithUserCvWithCvEducationSortedDate() {
+		return new SuccesDataResult<List<UserCvEducationSortedDateDto>>(this.userCvDao.getUserAccountWithUserCvWithCvEducationSortedDate(), "Data Listelendi.");
+	}
+
+	@Override
+	public DataResult<List<CvAllDto>> getAllCv() {
+		return new SuccesDataResult<List<CvAllDto>>(this.userCvDao.getAllCv(), "Data Listelendi.");
 	}
 }

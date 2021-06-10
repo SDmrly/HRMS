@@ -12,6 +12,8 @@ import kodlamaio.HRMS.business.abstracts.UserCvService;
 import kodlamaio.HRMS.core.entities.UserCv;
 import kodlamaio.HRMS.core.utilities.results.DataResult;
 import kodlamaio.HRMS.core.utilities.results.Result;
+import kodlamaio.HRMS.entities.dtos.CvAllDto;
+import kodlamaio.HRMS.entities.dtos.UserCvEducationSortedDateDto;
 import kodlamaio.HRMS.entities.dtos.UserCvJobExperienceSortedDateDto;
 
 @RestController
@@ -30,14 +32,19 @@ public class UserCvController {
 		return this.userCvService.add(userCv);
 	}
 	
-	@GetMapping(value = "/getAll")
-	public DataResult<List<UserCv>> getAll(){
-		return this.userCvService.getAll();
-	}
-	
 	@GetMapping(value = "/getUserAccountWithUserCvWithCvJobExperienceSortedDate")
 	public DataResult<List<UserCvJobExperienceSortedDateDto>> getUserAccountWithUserCvWithCvJobExperienceSortedDate(){
 		return this.userCvService.getUserAccountWithUserCvWithCvJobExperienceSortedDate();
+	}
+	
+	@GetMapping(value = "/getUserAccountWithUserCvWithCvEducationSortedDate")
+	public DataResult<List<UserCvEducationSortedDateDto>> getUserAccountWithUserCvWithCvEducationSortedDate() {
+		return this.userCvService.getUserAccountWithUserCvWithCvEducationSortedDate();
+	}
+	
+	@GetMapping(value = "/getAllCv")
+	public DataResult<List<CvAllDto>> getAllCv(){
+		return this.userCvService.getAllCv();
 	}
 	
 	
